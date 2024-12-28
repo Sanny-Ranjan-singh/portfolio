@@ -1303,7 +1303,7 @@
     <script>
       document.getElementById('contactForm').addEventListener('submit', async function (e) {
         e.preventDefault(); // Prevent the default form submission
-    
+        const BACKEND_URL = "https://portfolio-contact-3a99jbzts.vercel.app";
         // Get form data
         const formData = {
           name: document.getElementById('name-field').value,
@@ -1317,7 +1317,7 @@
           document.querySelector('.loading').style.display = 'block';
     
           // Send form data to backend
-          const response = await fetch('http://localhost:5000/api/contact', {
+          const response = await fetch(`${BACKEND_URL}/api/contact`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
